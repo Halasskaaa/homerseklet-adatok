@@ -19,6 +19,7 @@ async function adatokBetoltese() {
 
   const adat = await response.json() as Homerseklet[];
 
+  const content = document.getElementById('content'); 
   for (var item in adat) {
     const tr = document.createElement('tr') as HTMLTableRowElement;
 
@@ -29,9 +30,9 @@ async function adatokBetoltese() {
     const tdHomerseklet = document.createElement('td')
     tdHomerseklet.textContent = item.temperature;
     tr.appendChild(tdHomerseklet);
-  }
 
-    
+    content?.appendChild(tr);
+  }
 }
 
 async function adatHozzaadasa() {
