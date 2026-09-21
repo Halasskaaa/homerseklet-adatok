@@ -12,9 +12,9 @@
     <h2>Adatok hozzáadása</h2>
 
     <form id="adatokBekuldese">
-      <div>
-        <label for="nap">Nap</label>
-        <select name="nap" id="nap">
+      <!-- <div class="mb-3">
+        <label for="nap" class="form-label">Nap</label>
+        <select name="nap" id="nap" class="form-select">
           <option value="hetfo">Hétfő</option>
           <option value="kedd">Kedd</option>
           <option value="szerda">Szerda</option>
@@ -23,16 +23,14 @@
           <option value="szombat">Szombat</option>
           <option value="vasarnap">Vasárnap</option>
         </select>
-        
+      </div> -->
+      <div class="mb-3">
+        <label for="homerseklet" class="form-label">Jelenlegi hőmérséklet hozzáadása</label>
+        <input name="homerseklet" id="homerseklet" type="number" class="form-control">        
       </div>
 
-      <div>
-        <label for="homerseklet">Hőmérséklet</label>
-        <input name="homerseklet" id="homerseklet" type="number">        
-      </div>
-
-      <div>
-      <button id="submit">Beküldés</button>
+      <div class="mb-3">
+      <button id="submitBtn" class="btn btn-primary">Beküldés</button>
       </div>
 
     </form>
