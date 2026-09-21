@@ -12,11 +12,23 @@
     <h2>Adatok hozzáadása</h2>
 
     <form id="adatokBekuldese">
-
-      
       <div>
-        <label for="inputHomerseklet">Hőmérséklet</label>
-        <input name="inputHomerseklet" id="inputHomerseklet" type="number">        
+        <label for="nap">Nap</label>
+        <select name="nap" id="nap">
+          <option value="hetfo">Hétfő</option>
+          <option value="kedd">Kedd</option>
+          <option value="szerda">Szerda</option>
+          <option value="csutortok">Csütörtök</option>
+          <option value="pentek">Péntek</option>
+          <option value="szombat">Szombat</option>
+          <option value="vasarnap">Vasárnap</option>
+        </select>
+        
+      </div>
+
+      <div>
+        <label for="homerseklet">Hőmérséklet</label>
+        <input name="homerseklet" id="homerseklet" type="number">        
       </div>
 
       <div>
@@ -25,6 +37,7 @@
 
     </form>
 
+    <table id="tabla"></table>
     
     <script type="module" src="/src/main.ts"></script>
   </body>
