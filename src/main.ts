@@ -1,24 +1,42 @@
 import './style.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Homerseklet } from './Homerseklet';
+import type { Homerseklet } from './Homerseklet';
 
 const URL_API = 'https://petrik-idojaras-default-rtdb.europe-west1.firebasedatabase.app/.json'
 
-const betoltes = addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   adatokBetoltese();
+
+  document.getElementById('adatBekuldese')?.addEventListener('submit', adatHozzaadasa);
+
   })
 
-async function fetch_API(URL_API: string) {
-  const response = await fetch(URL_API);
-  if (!response.ok) {
-    throw new Error('Error: ' + response.statusText);
-  }
-  return await response.text();
-}
-
 async function adatokBetoltese() {
+  const response = await fetch(URL_API);
+  if (!response) {
+    throw new Error('Error')
+  }
 
+  const adat = await response.json() as Homerseklet[];
 
+  for (var item in adat) {
+    const tr = document.createElement('tr') as HTMLTableRowElement;
+
+    const tdNap = document.createElement('td')
+    tdNap.textContent = item.day;
+    tr.appendChild(tdNap);
+
+    const tdHomerseklet = document.createElement('td')
+    tdHomerseklet.textContent = item.temperature;
+    tr.appendChild(tdHomerseklet);
+  }
+
+    
 }
+
+async function adatHozzaadasa() {
+  
+}
+
 
 

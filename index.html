@@ -5,16 +5,17 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>homerseklet-adatok</title>
+
   </head>
   <body>
     <h1>Hőmérséklet adatok</h1>
 
     <h2>Adatok hozzáadása</h2>
 
-    <form id="adatokBekuldese">
+    <form id="adatBekuldese">
       <!-- <div class="mb-3">
-        <label for="nap" class="form-label">Nap</label>
-        <select name="nap" id="nap" class="form-select">
+        <label for="day" class="form-label">Nap</label>
+        <select name="day" id="day" class="form-select">
           <option value="hetfo">Hétfő</option>
           <option value="kedd">Kedd</option>
           <option value="szerda">Szerda</option>
@@ -25,8 +26,8 @@
         </select>
       </div> -->
       <div class="mb-3">
-        <label for="homerseklet" class="form-label">Jelenlegi hőmérséklet hozzáadása</label>
-        <input name="homerseklet" id="homerseklet" type="number" class="form-control">        
+        <label for="temperature" class="form-label">Jelenlegi hőmérséklet hozzáadása</label>
+        <input name="temperature" id="temperature" type="number" class="form-control">        
       </div>
 
       <div class="mb-3">
@@ -35,7 +36,15 @@
 
     </form>
 
-    <table id="tabla"></table>
+    <table class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>Nap</tr>
+        <tr>Hőmérséklet</tr>
+      </thead>
+      <tbody id="content">
+
+      </tbody>
+    </table>
     
     <script type="module" src="/src/main.ts"></script>
   </body>
